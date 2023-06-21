@@ -1,0 +1,170 @@
+body {
+  font-family: Arial, Verdana, sans-serif;
+  background-color: #e4e1de;
+}
+.estiloimg{
+  width: 80px!important;
+  height: 80px!important;
+}
+#piezas {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+}
+.espacio{
+  position: absolute; left: 14%;
+}
+#puzzle {
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.pieza {
+  width: 223px;
+  height: 223px;
+  background-size: cover;
+  margin: 10px;
+}
+
+.placeholder {
+  background-color: #ffffff;
+  width: 230px;
+  margin: 10px;
+  height: 230px;
+  transition: 1s;
+  border-radius: 20px;
+  border-style: dotted;
+}
+
+.placeholder.hover {
+  background-color: rgb(255, 183, 0);
+}
+
+.placeholder .pieza {
+  margin: 0;
+}
+
+#mensaje {
+  color: black;
+  text-align: center;
+  display: none;
+}
+
+.ganaste {
+  background-color:  #e4e1de ;
+}
+
+.ganaste #mensaje {
+  display: block;
+}
+
+.ganaste .placeholder {
+  outline: none;
+}
+
+.ganaste #piezas {
+  display: none;
+}
+
+.barra {
+  width: 50%;
+  height: 30px;
+  background-color: #e4e1de;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.progreso {
+  display: flex;
+  align-items: center;
+  transition: width 0.55s;
+  width: 0;
+  height: 100%;
+  background-color: #f8951a;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 25% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  text-align: center;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/* Consulta de medios para resoluciones de pantalla mínimas de 2000x1500 */
+@media (min-width: 2000px) and (min-height: 1500px) {
+  :root {
+    --escala: 1.15115482; /* Variable que multiplica el tamaño de los elementos */
+  }
+
+  #piezas, .placeholder {
+    transform: scale(var(--escala)); /* Aplica la escala a los elementos */
+    
+  }
+
+  .pieza {
+    width: calc(223px * var(--escala)); /* Calcula el nuevo ancho proporcionalmente */
+    height: calc(223px * var(--escala)); /* Calcula la nueva altura proporcionalmente */
+    margin: calc(35px * var(--escala)); /* Calcula el nuevo margen proporcionalmente */
+  }
+  .placeholder {
+    width: calc(230px * var(--escala)); /* Calcula el nuevo ancho proporcionalmente */
+    height: calc(230px * var(--escala)); /* Calcula la nueva altura proporcionalmente */
+    margin: calc(49px * var(--escala)); /* Calcula el nuevo margen proporcionalmente */
+    border-radius: calc(20px * var(--escala)); /* Calcula el nuevo radio de borde proporcionalmente */
+  }
+
+  .barra {
+    width: calc(50% * var(--escala)); /* Calcula el nuevo ancho de la barra proporcionalmente */
+    height: calc(30px * var(--escala)); /* Calcula la nueva altura de la barra proporcionalmente */
+    margin-bottom: calc(10px * var(--escala)); /* Calcula el nuevo margen inferior de la barra proporcionalmente */
+    border-radius: calc(20px * var(--escala)); /* Calcula el nuevo radio de borde de la barra proporcionalmente */
+  }
+
+  .progreso {
+    width: 0; /* La anchura de la barra de progreso se ajustará mediante JavaScript */
+    height: 100%; /* La altura de la barra de progreso se mantiene igual */
+  }
+  .container {
+    max-width: 2500px; /* Establece un ancho máximo de 800px para el contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+  }
+  body {
+    margin: 230px;
+  }
+  button {
+    margin: 0px;
+    padding: 0;
+    border: none;
+    background: none;
+}
+.estiloimg{
+  width: 100% !important;
+  height:100% !important;
+}
+.espacio{
+  margin: -45px;
+  position: absolute; left: 16%;
+}
+}
